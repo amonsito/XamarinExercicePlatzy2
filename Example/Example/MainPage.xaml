@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Example.MainPage"
+             xmlns:Maquinaria="clr-namespace:Example"
+             x:Name="main">
+    <ContentPage.BindingContext>
+        <Maquinaria:Maquinaria/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Header"></Setter>
+            <Setter Property="TextColor" Value="Black"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Orientation="Horizontal">
+            <Label Text="{Binding Hora,StringFormat='{0}:', Mode=OneWay}" ></Label>
+            <Label Text="{Binding Minuto,StringFormat='{0}:', Mode=OneWay}"></Label>
+            <Label Text="{Binding Segundo, Mode=OneWay}"></Label>
+    </StackLayout>
+</ContentPage>
